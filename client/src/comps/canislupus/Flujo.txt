@@ -1,0 +1,36 @@
+Inicio 
+Ejemplares
+Cruces
+Contacto
+Guía
+
+/log {
+    Registrarse (como administrador)
+    Iniciar sesión (como administrador)
+}
+___________________________________________
+Flujo para el administrador
+
+/inicio/admin           Inicio (como administrador)
+/ejemplares/admin       Ejemplares (como administrador)
+/cruces/admin           Cruces (como administrador)
+/contacto/admin         Contacto (como administrador)
+/guia/admin             Guía (como administrador)
+
+/ejemplares/admin > agregar ejemplar > cada ejemplar > detalle > programar un cruce > cruces > agregar cruce > cada cruce > detalle 
+
+/cruces/admin > agregar cruce > cada cruce > detalle (ejemplar) > programar un cruce > cruces > agregar cruce 
+
+___________________________________________
+Flujo para el usuario
+
+/inicio           Inicio (como usuario)
+/ejemplares       Ejemplares (como usuario)
+/cruces           Cruces (como usuario)
+/contacto         Contacto (como usuario)
+/guia             Guía (como usuario)
+
+/ejemplares > cada ejemplar > detalle > cruces > detalle ejemplar || reservar cachorro
+/cruces > reservar cachorro || detalle ejemplar > 
+
+esta boludez es hacer el flujo, pero va a tomar horas y reverlo otras horas más, capaz me ayuda a prestablecer otras cosas

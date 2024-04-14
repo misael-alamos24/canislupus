@@ -1,0 +1,27 @@
+Al ingresar al sitio, no sé dónde va a caer, lo resolvemos después.
+La sección Ejemplares, accesible desde la barra de navegación, es el eje principal del sitio web. Razones:
+
+1. El sitio se alimenta de ejemplares. 
+Si no hay ejemplares cargados, el sitio te va a pedir que cargues
+(para generar los cruces, para ofrecer referencias y detalles de los ejemplares de tu manada, 
+para vender ejemplares con cierta edad si así se decide por descartar uno del plan de cría o por la razón que fuere).
+
+Sección                         Comportamiento
+'/ejemplares'                   Agregar ejemplar
+'/cruces'                       Agregar ejemplar
+
+Se va a mostrar un botón que dice "Agregar ejemplar".
+Al clickar, se abre un formulario, para ingresar 
+
+imagen, (cloudinary link o storing en server)
+variedad de lobo, (text, almacenar en modelo propio)
+sexo, ("macho", "hembra", "" || true, false, null)
+fecha de nacimiento, (date)
+cualquier descripción, (text)
+en venta, (binario)
+precio, (float)
+moneda, (string)
+
+siendo obligatorios los campos "imagen" y "variedad".
+
+Si hay ejemplares, los vas a tener disponibles en la sección "Programación de cruces", "Ejemplares".

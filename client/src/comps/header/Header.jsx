@@ -24,7 +24,7 @@ export default function Header () {
             </div>
           </div>
           <div className='center-text' style={{width: '25%', fontFamily:'serif'}}>
-            Canis Lupus
+            
             {/* <b className='padding4'>☑️ Seleccionados (0) $0</b> */}
           </div>
         </div>

@@ -20,8 +20,8 @@ export default function Crossings ({admin}) {
         boolean: !!location.state?.species, 
         selected: location.state?.species || '', 
         array: location.state?.species? 
-            crossings.filter(c=>c.male === location.state?.species || 
-                c.female === location.state?.species
+            crossings.filter(c=>c?.male?.species === location.state?.species || 
+                c?.female?.species === location.state?.species
             ) : [],
         });
     console.log({filter})
@@ -32,18 +32,47 @@ export default function Crossings ({admin}) {
                 Filtrar por...
             </b>
             <div className="flex border">
-                <select 
-                    className="w30 h"
-                    value={filter.selected} 
-                    onChange={(e)=>setFilter({...filter, selected: e.target.value})}>
-                    <option></option>
-                    {canis.map((c,i)=><option key={i}>{c.species}</option>)}
-                </select>
+                <div className="w30 h">
+                    <div>...subespecie</div>
+                    <select 
+                        className="w100 h"
+                        value={filter.selected} 
+                        onChange={(e)=>setFilter({
+                            ...filter, 
+                            selected: crossings.find(
+                                c=> c?.male?.species === e.target.value 
+                                ||  c?.female?.species === e.target.value 
+                            )
+                        })}>
+                        <option></option>
+                        {canis.map((c,i)=><option key={i}>{c.species}</option>)}
+                    </select>
+                </div>
+                <div className="w30 h">
+                    <div>...nombre</div>
+                    <select 
+                        className="w100 h"
+                        value={filter.selected} 
+                        onChange={(e)=>setFilter({
+                            ...filter, 
+                            selected: crossings.find(
+                                c=> c?.male?.name === e.target.value 
+                                ||  c?.female?.name === e.target.value
+                            )
+                        })}>
+                        <option></option>
+                        {canis.map((c,i)=><option key={i}>{c.name}</option>)}
+                    </select>
+                </div>
                 <div className="block w30">
                     <button className="w100 green" onClick={()=>setFilter({
                         ...filter, 
                         array: crossings.filter(
-                            (c,i)=>c.male === filter.selected || c.female === filter.selected), 
+                            c=> c.male.name      === filter.selected 
+                            ||  c.male.species   === filter.selected 
+                            ||  c.female.name    === filter.selected 
+                            ||  c.female.species === filter.selected
+                        ), 
                         boolean: true
                     })}>
                         Aplicar filtro
@@ -92,7 +121,7 @@ export default function Crossings ({admin}) {
                                 {
                                     // canis.filter(c=>c.sex==='Macho').map(
                                     males.map(
-                                        (c,i)=><option key={i}>{c?.species}</option>
+                                        (c,i)=><option key={i}>{c?.name}</option>
                                     )
                                 }
                             </select>
@@ -103,7 +132,7 @@ export default function Crossings ({admin}) {
                                 {
                                     // canis.filter(c=>c.sex==='Hembra').map(
                                     females.map(
-                                        (c,i)=><option key={i}>{c?.species}</option>
+                                        (c,i)=><option key={i}>{c?.name}</option>
                                     )
                                 }
                             </select>

@@ -4,6 +4,7 @@ import { //useLocation,
 import Img from "../Img";
 
 export default function Crossing ({id, male, female, currency, price, year}) { 
+    console.log({id, male, female, currency, price, year})
 
     const navigate = useNavigate();
     const canis = useSelector(state => state.canis);

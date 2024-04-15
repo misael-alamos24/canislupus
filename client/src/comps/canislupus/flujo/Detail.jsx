@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 export default function Detail () {
 
     const navigate = useNavigate();
-    const location = useLocation(); //console.log(location.state)
+    const location = useLocation(); console.log({'location.state': location.state})
     const {i, sex, species} = location.state;
     const state = {state: {i, sex, species}}; 
 

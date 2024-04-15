@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+const wolfpng = require('./urbanbrush-20220302195036825030.jpg')
 
 export default function Header () {
 
@@ -6,8 +7,9 @@ export default function Header () {
 
     return (
         <div className='header resp-header'>
-          <div className='center-text cinzel-logo min30 resp-header-item'>
-            Canis Lupus
+          <div className='center-text cinzel-logo min30 resp-header-item flex center'>
+            <img src={wolfpng} alt='' className='h' style={{height:'36px'}}/> 
+            <div>Canis Lupus</div>
             {/* <b className='padding4'>☑️ Seleccionados (0) $0</b> */}
           </div>
           {/* <img width={'25%'} alt='' src={logo}/> */}

@@ -39,7 +39,7 @@
   display: flex;
   justify-content: space-between;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .resp-header {
     display: block;
   }

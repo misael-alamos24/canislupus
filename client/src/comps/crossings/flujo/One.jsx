@@ -18,7 +18,10 @@ export default function Crossing ({id, male, female}) {
 
     return (
         <div className="border">
-            <div className="w90 border marginy4"><div>ID: {id}</div></div>
+            <div className="flex">
+            <div className="w30 border marginy4"><div>ID: {id}</div></div>
+            <div className="w30 border marginy4 center-text pointer">Reservar cachorro</div>
+            </div>
             <div className="resp-one"> 
                 <div className="w100 center-text border marginy8">{'Macho: '}
                     <u className="u" onClick={()=>navigate('/ejemplares/detail', {state:details.male})}>

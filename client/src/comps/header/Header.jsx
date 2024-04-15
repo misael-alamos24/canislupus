@@ -25,7 +25,8 @@ export default function Header () {
                 <div className='padding4 cursorpointer' onClick={()=>navigate('/login-user')}>Iniciar sesión</div>
             </div>
           </div>
-          <div className='mall' style={{width: '25%'}}>
+          <div className='center-text' style={{width: '25%', fontFamily:'serif'}}>
+            Canis Lupus
             {/* <b className='padding4'>☑️ Seleccionados (0) $0</b> */}
           </div>
         </div>

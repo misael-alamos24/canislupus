@@ -1,7 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 
-// const logo = require('../../assets/logo.jpg');
-
 export default function Header () {
 
   let navigate = useNavigate();

@@ -434,3 +434,8 @@ textarea {
 .marginy8 {
   margin: 8px auto;
 }
+.textarea-desc {
+  width: 100%;
+  /* Ancho fijo */
+  resize: none;
+}

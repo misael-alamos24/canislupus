@@ -67,8 +67,8 @@ export default function New ({each, i, name, species, s, c, e, color, desc, date
                 <div className="resp-new paddingy4">
                     {!each ? <div className="w100 center-text">Descripción</div> : desc && <div className="w100 center-text">Descripción</div>}
                     {each ? <div className="w100">{desc}</div> : <div className="w100 flex">
-                            <textarea onChange={change} style={{fontFamily:'serif'}} className="textarea-desc"
-                        placeholder="Cualquier característica" name="desc" value={input.desc} rows='3'/>
+                            <textarea onChange={change} style={{fontFamily:'serif'}} className="textarea-desc "
+                        placeholder="Cualquier característica" name="desc" value={input.desc} rows='4'/>
                         <input type="checkbox" title={marktext}/>
                     </div>}
                 </div>

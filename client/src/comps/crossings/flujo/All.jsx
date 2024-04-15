@@ -8,13 +8,13 @@ export default function Crossings ({admin}) {
 
     const location = useLocation(); console.log(location.state);
     const dispatch = useDispatch();
-    const crossings = useSelector(state => state.crossings); //console.log({crossings});
+    const crossings = useSelector(state => state.crossings); console.log({crossings});
     const canis = useSelector(state => state.canis); //console.log({canis});
     const males = canis.filter((c,i)=>c.sex==='Macho') || []; //console.log({males})
     const females = canis.filter((c,i)=>c.sex==='Hembra') || []; //console.log({females})
     const male = males.length ? males[0].species : '';
     const female = females.length ? females[0].species : '';
-    const [input, setInput] = useState({male, female});
+    const [input, setInput] = useState({male, female, year: new Date().getFullYear(), price: '', currency: ''});
     const change = e => setInput({...input, [e.target.name]:e.target.value});
     const [filter, setFilter] = useState({
         boolean: !!location.state?.species, 
@@ -92,7 +92,7 @@ export default function Crossings ({admin}) {
                                 {
                                     // canis.filter(c=>c.sex==='Macho').map(
                                     males.map(
-                                        (c,i)=><option key={i}>{c?.species}</option>
+                                        (c,i)=><option key={i}>{c?.name}</option>
                                     )
                                 }
                             </select>
@@ -103,10 +103,27 @@ export default function Crossings ({admin}) {
                                 {
                                     // canis.filter(c=>c.sex==='Hembra').map(
                                     females.map(
-                                        (c,i)=><option key={i}>{c?.species}</option>
+                                        (c,i)=><option key={i}>{c?.name}</option>
                                     )
                                 }
                             </select>
+                        </div>
+                    </div>
+                    <div className="flex w30">
+                        <div className="w100 border">
+                            <div className="center-text borderradius">Temporada</div>
+                            <input type='number' onChange={change} name="year" value={input.year} 
+                                min={new Date().getFullYear()} max={new Date().getFullYear()+5}
+                            />
+                        </div>
+                        <div className="w100 border">
+                            <div className="center-text borderradius">Precio</div>
+                            <div className="flex">
+                                <select onChange={change} name="currency" value={input.currency}>
+                                    <option>AR$</option><option>USD</option><option>EUR</option>
+                                </select>
+                                <input type='number' onChange={change} name="price" value={input.price}/>                            
+                            </div>
                         </div>
                     </div>
                     <button className="w30" onClick={()=>dispatch(addCrossing({...input}))}>
@@ -119,7 +136,13 @@ export default function Crossings ({admin}) {
             <b>Cruces programados</b>
             {
                 !!crossings.length ? <div>
-                    {crossings.map((c,i)=><One id={i} male={c.male} female={c.female} key={i}/>)}
+                    {crossings.map((c,i)=><One id={i} key={i}
+                        currency={c.currency} 
+                        price={c.price}
+                        year={c.year}
+                        male={c.male} 
+                        female={c.female} 
+                    />)}
                 </div> :
                 <div className="">Todavía no hay cruces programados</div>
             }

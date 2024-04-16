@@ -5,11 +5,19 @@ import {
     // GET_CROSSING, 
     // GET_DOGS, 
     POST_CROSSING, 
-    POST_DOGS, 
+    POST_DOGS,
+    PUT_SECTION, 
     // PUT_CROSSING, 
     // PUT_DOGS 
 } from "../constants";
 // import { DEL_CATEGORIES, GET_CATEGORIES, POST_CATEGORIES, PUT_CATEGORIES } from "../constants";
+
+export const putSection = (payload) => {
+    return {
+        type: PUT_SECTION,
+        payload,
+    }
+};
 
 // export const getDogs = (payload) => {
 //     return {

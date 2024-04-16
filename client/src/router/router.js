@@ -7,6 +7,7 @@ import App from '../App';
 import All from '../comps/canislupus/flujo/All';
 import Detail from '../comps/canislupus/flujo/Detail';
 import Crossings from '../comps/crossings/flujo/All';
+import Home from '../comps/home/Home';
 // import Add from '../comps/canislupus/Add';
 // import Admin from '../components/admin/Admin';
 // import Login from '../components/log/Login';
@@ -28,6 +29,10 @@ export const router= createBrowserRouter([
   {
     path: '/',
     element: <App/>
+  },
+  {
+    path: '/inicio',
+    element: <App inner={<Home/>}/>
   },
   {
     path: '/cruces',

@@ -8,3 +8,5 @@ export const GET_CROSSING = 'GET_CROSSING';
 export const POST_CROSSING = 'POST_CROSSING';
 export const PUT_CROSSING = 'PUT_CROSSING';
 export const DEL_CROSSING = 'DEL_CROSSING';
+//Sections
+export const PUT_SECTION = 'PUT_SECTION';

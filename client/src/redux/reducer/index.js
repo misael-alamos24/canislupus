@@ -2,17 +2,23 @@ import {
     // DEL_DOGS, 
     // GET_DOGS, 
     POST_CROSSING, 
-    POST_DOGS, 
+    POST_DOGS,
+    PUT_SECTION, 
     // PUT_DOGS 
 } from "../constants";
 
 const initialState= {
+    actualSection: '',
     canis: [],
     crossings: [],
 };
 
 const rootReducer = (state= initialState, {type, payload}, extra)=>{
     switch (type) {
+        case PUT_SECTION: return {
+            ...state,
+            actualSection: payload,
+        }
         // case GET_DOGS: return {
         //     ...state,
         //     canis: payload,

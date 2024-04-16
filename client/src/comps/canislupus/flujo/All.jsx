@@ -1,6 +1,8 @@
 // import One from "./One";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import New from "./New";
+import { putSection } from "../../../redux/actions";
+import { useEffect } from "react";
 // import Resize from "./Resize";
 
 /* 
@@ -11,6 +13,13 @@ import New from "./New";
 export default function All ({admin}) {
 
     const canis = useSelector(state => state.canis); console.log({canis})
+    const dispatch = useDispatch();
+    let actualSection = useSelector(state => state.actualSection);
+    useEffect(()=>{
+        actualSection !== 'Ejemplares' && dispatch(putSection('Ejemplares'));
+        return ()=> dispatch(putSection(''));
+        // eslint-disable-next-line 
+    },[]);
 
     return (
         <div>

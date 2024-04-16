@@ -1,8 +1,9 @@
 import { useState } from "react";
 import One from "./One.jsx";
 import { useDispatch, useSelector } from 'react-redux';
-import { addCrossing } from "../../../redux/actions";
+import { addCrossing, putSection } from "../../../redux/actions";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Crossings ({admin}) {
 
@@ -25,7 +26,12 @@ export default function Crossings ({admin}) {
                 c.female === location.state?.species
             ) : [],
         });
-    console.log({filter})
+    let actualSection = useSelector(state=> state.actualSection);
+    useEffect(()=>{
+        actualSection !== 'Cruces' && dispatch(putSection('Cruces'));
+        return ()=>dispatch(putSection(''));
+        // eslint-disable-next-line 
+    },[])
     return (
         <div className="">
             <div className="">

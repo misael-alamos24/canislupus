@@ -289,6 +289,24 @@ textarea {
   background-color: #7a4f000a;
   color: #afa298;
 }
+.text-center {
+  text-align: center;
+}
+.paddingy8 {
+  padding: 8px 0px;
+}
+.margin-auto {
+  margin: auto;
+}
+.shadow-b {
+  background: linear-gradient(to bottom, #442c0042, transparent);
+}
+.shadow-l {
+  background: linear-gradient(to left, #7a4f000a, black);
+}
+.w-fit {
+  width: fit-content;
+}
 .text-noback {
   background-color: transparent;
 }
@@ -324,6 +342,11 @@ button {
   border-radius: 16px;
   font-weight: 600;
   cursor: pointer;
+}
+button:disabled {
+  background-color: #5c6073;
+  color: #544f4b;
+  cursor: not-allowed;
 }
 input,
 select,

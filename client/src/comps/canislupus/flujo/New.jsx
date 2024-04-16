@@ -15,7 +15,7 @@ export default function New ({each, i, name, species, s, c, e, color, desc, date
     const [clean, setClean] = useState(false);
     const [input, setInput] = useState({name: '', species: '', sex: '', cont: '', esp: '', color: '', desc: '', date: '', });
     const change = e => setInput({...input, [e.target.name]:e.target.value});
-    const marktext = 'Marque esta casilla para no mostrar este dato';
+    // const marktext = 'Marque esta casilla para no mostrar este dato';
 
     const state = {state: {i, sex: s, species}}; 
 
@@ -30,30 +30,51 @@ export default function New ({each, i, name, species, s, c, e, color, desc, date
             </div>
             <div className="block responsive30-90">
                 <div className="resp-new paddingy4">
-                    {!each ? <div className="w100 center-text">Nombre</div>: name && <div className="w100 center-text">Nombre</div>}
+                    {!each ? 
+                    <div className="w100 flex">
+                        <div className="center-text" style={{textAlign: 'left', color: 'rgba(0, 194, 248, 0.8)'}}>*</div>
+                        <div className="w100 center-text">Nombre</div>
+                    </div>
+                    : 
+                    name && <div className="w100 center-text">Nombre</div>
+                    }
                     {each ? <div className="w100">{name}</div> : <div className="w100 flex">
-                            <input className="w100" style={{fontFamily: 'serif'}} placeholder="Nombre" name="name" value={input.name} 
+                            <input className="w100" style={{fontFamily: 'serif'}} placeholder="Nombre del ejemplar" name="name" value={input.name} 
                             onChange={change}/>
-                            <input type="checkbox" title={marktext}/>
+                            {/* <input type="checkbox" title={marktext}/> */}
                         </div>}
                 </div>    
                 <div className="resp-new paddingy4">
-                    {!each ? <div className="w100 center-text">Variedad</div>: species && <div className="w100 center-text">Variedad</div>}
+                    {!each ? 
+                    <div className="w100 flex">
+                        <div className="center-text" style={{textAlign: 'left', color: 'rgba(0, 194, 248, 0.8)'}}>*</div>
+                        <div className="w100 center-text">Variedad</div>
+                    </div>
+                    : 
+                    species && <div className="w100 center-text">Variedad</div>
+                    }
                     {each ? <div className="w100">{species}</div> : <div className="w100 flex">
-                            <input className="w100" style={{fontFamily: 'serif'}} placeholder="Variedad" name="species" value={input.species} 
+                            <input className="w100" style={{fontFamily: 'serif'}} placeholder="Ártico/ Europeo/ etc" name="species" value={input.species} 
                             onChange={change}/>
-                            <input type="checkbox" title={marktext}/>
+                            {/* <input type="checkbox" title={marktext}/> */}
                         </div>}
                 </div>    
                 <div className="flex paddingy4">
-                    {!each ? <div className="w100 center-text">Sexo</div> : s && <div className="w100 center-text">Sexo</div>  }
+                    {!each ? 
+                    <div className="w100 flex">
+                        <div className="center-text" style={{textAlign: 'left', color: 'rgba(0, 194, 248, 0.8)'}}>*</div>
+                        <div className="w100 center-text">Sexo</div>
+                    </div>
+                     : 
+                     s && <div className="w100 center-text">Sexo</div>  
+                     }
                     {each ? <div className="w100">{s}</div> : <div className="w100 flex">
                             <select className="w100" name="sex" onChange={change} value={input.sex}>
                             {
                                 sex.map((s,i)=><option key={i}>{s}</option>)
                             }
                         </select>  
-                        <input type="checkbox" title={marktext}/>
+                        {/* <input type="checkbox" title={marktext}/> */}
                     </div>}
                 </div>
                 <div className="flex paddingy4">
@@ -61,7 +82,7 @@ export default function New ({each, i, name, species, s, c, e, color, desc, date
                     {each ? <div className="w100">{date}</div> : <div className="w100 flex">
                             <input type="date" className="w100"
                         name="date" value={input.date} onChange={change}/>
-                        <input type="checkbox" title={marktext}/>
+                        {/* <input type="checkbox" title={marktext}/> */}
                     </div>}
                 </div>
                 <div className="resp-new paddingy4">
@@ -69,9 +90,10 @@ export default function New ({each, i, name, species, s, c, e, color, desc, date
                     {each ? <div className="w100">{desc}</div> : <div className="w100 flex">
                             <textarea onChange={change} style={{fontFamily:'serif'}} className="textarea-desc "
                         placeholder="Cualquier característica" name="desc" value={input.desc} rows='4'/>
-                        <input type="checkbox" title={marktext}/>
+                        {/* <input type="checkbox" title={marktext}/> */}
                     </div>}
                 </div>
+                {!each && <div className='text-center' style={{color: 'rgba(0, 194, 248, 0.8)'}}>* Obligatorios</div>}
             </div>
             
             <div className="block responsive30-90">
@@ -84,7 +106,7 @@ export default function New ({each, i, name, species, s, c, e, color, desc, date
                                 esp.map((s,i)=><option key={i}>{s}</option>)
                             }
                         </select>  
-                        <input type="checkbox" title={marktext}/>
+                        {/* <input type="checkbox" title={marktext}/> */}
                     </div>}
                 </div>    
                 <div className="flex paddingy4">
@@ -96,7 +118,7 @@ export default function New ({each, i, name, species, s, c, e, color, desc, date
                                 cont.map((s,i)=><option key={i}>{s}</option>)
                             }
                         </select>  
-                        <input type="checkbox" title={marktext}/>
+                        {/* <input type="checkbox" title={marktext}/> */}
                     </div>}
                 </div>    
                 <div className="flex paddingy4">
@@ -105,7 +127,7 @@ export default function New ({each, i, name, species, s, c, e, color, desc, date
                         <div className="w100 flex">
                             <input className="w100" style={{fontFamily: 'serif'}} placeholder="Color" name="color" value={input.color} 
                             onChange={change}/> 
-                        <input type="checkbox" title={marktext}/> 
+                        {/* <input type="checkbox" title={marktext}/>  */}
                     </div>}
                 </div>
                 {each? 
@@ -117,7 +139,10 @@ export default function New ({each, i, name, species, s, c, e, color, desc, date
                 </div>
                 :
                 <div className="marginy4">
-                    <button className="w100 h marginy4" onClick={()=>dispatch(addDog({...input, i: canis.length}))}>
+                    <button className="w100 h marginy4" 
+                        onClick={()=>dispatch(addDog({...input, i: canis.length}))}
+                        disabled={!input.sex || !input.name || !input.species}
+                        title={(!input.sex || !input.name || !input.species) ? 'Completar campos obligatorios (Nombre, Variedad y Sexo)' : ''}>
                             Agregar ejemplar
                     </button>
                     <button className="w100 h marginy4" onClick={()=>setClean(true)}>

@@ -7,9 +7,9 @@ export default function Header () {
 
     return (
         <div className='header resp-header'>
-          <div className='center-text cinzel-logo min30 resp-header-item flex between'>
+          <div className='center-text typical-color cinzel-logo min30 resp-header-item flex between shadow-l'>
             <img src={wolfpng} alt='' className='h' style={{height:'36px'}}/> 
-            <div>Canis Lupus</div>
+            <div className=''>Canis Lupus</div>
             <div>{''}</div>
             {/* <b className='padding4'>☑️ Seleccionados (0) $0</b> */}
           </div>

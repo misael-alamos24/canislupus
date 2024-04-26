@@ -38,8 +38,8 @@ export default function Home (){
                 Planes de pago
             </div>
             <br />
-            <div className="flex">
-                {methods.map((m,i) => <div className="text-center border marginy8 w30" style={{color: m.color}} key={i}>
+            <div className="responsive-home">
+                {methods.map((m,i) => <div className="text-center border marginy8 resp-home30" style={{color: m.color}} key={i}>
                     {m.nombre.toUpperCase()}
                         <br />
                         <br />

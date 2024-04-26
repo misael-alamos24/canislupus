@@ -99,8 +99,8 @@ export default function Crossings ({admin}) {
                     Programar nuevo cruce
                 </b>
                 <div className="block border">
-                    <div className="flex">
-                        <div className="flex w30">
+                    <div className="responsive-home">
+                        <div className="responsive-home resp-home30">
                             <div className="block border w100">
                                 <div className="flex center-text"><div className="red">*</div><div className="w100">Macho</div></div>
                                 <select className="w100" name="male" onChange={change} value={input.male || males[0]}>
@@ -124,7 +124,7 @@ export default function Crossings ({admin}) {
                                 </select>
                             </div>
                         </div>
-                        <div className="flex w30">
+                        <div className="responsive-home resp-home30">
                             <div className="w100 border">
                                 <div className="center-text borderradius">Temporada</div>
                                 <input type='number' onChange={change} name="year" value={input.year} 
@@ -144,7 +144,7 @@ export default function Crossings ({admin}) {
                             </div>
                         </div>
                         <button 
-                            className="w30" 
+                        className="margin-auto h-64 resp-home30"
                             onClick={()=>dispatch(addCrossing({...input}))}
                             disabled={!input.male || !input.female}
                             title={!input.male || !input.female ? 'Aclarar ejemplares Macho y Hembra' : ''}

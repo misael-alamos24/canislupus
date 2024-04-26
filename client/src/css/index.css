@@ -510,3 +510,22 @@ textarea {
 .borderradius0 {
   border-radius: 0px;
 }
+.responsive-home {
+  display: flex;
+}
+@media screen and (max-width: 900px) {
+  .responsive-home {
+    display: block;
+  }
+}
+.resp-home30 {
+  width: 30%;
+}
+@media screen and (max-width: 900px) {
+  .resp-home30 {
+    width: 90%;
+  }
+}
+.h-64 {
+  height: 64px;
+}

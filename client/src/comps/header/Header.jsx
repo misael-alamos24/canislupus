@@ -1,9 +1,11 @@
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 const wolfpng = require('./urbanbrush-20220302195036825030.jpg')
 
 export default function Header () {
 
   let navigate = useNavigate();
+  let actualSection = useSelector(state=> state.actualSection);
 
     return (
         <div className='header resp-header'>
@@ -16,9 +18,9 @@ export default function Header () {
           {/* <img width={'25%'} alt='' src={logo}/> */}
           <div className='resp-header-item min30'>
             <div className='flex between'>
-                <div className='padding4 cursorpointer' onClick={()=>navigate('/logup-user')}>Crear cuenta</div>
+                <div className={actualSection==='logup-user'?"green cursorpointer padding4": 'cursorpointer padding4'} onClick={()=>navigate('/logup-user')}>Crear cuenta</div>
                 <div className='padding4'>|</div>
-                <div className='padding4 cursorpointer' onClick={()=>navigate('/login-user')}>Iniciar sesión</div>
+                <div className={actualSection==='login-user'?"green cursorpointer padding4": 'cursorpointer padding4'} onClick={()=>navigate('/login-user')}>Iniciar sesión</div>
             </div>
           </div>
           <div className='flex center resp-header-item min30'>

@@ -8,6 +8,10 @@ import All from '../comps/canislupus/flujo/All';
 import Detail from '../comps/canislupus/flujo/Detail';
 import Crossings from '../comps/crossings/flujo/All';
 import Home from '../comps/home/Home';
+import Contact from '../comps/contact/Conctact';
+import Help from '../comps/Help/Help';
+import Login from '../comps/header/log/login';
+import Logup from '../comps/header/log/logup';
 // import Add from '../comps/canislupus/Add';
 // import Admin from '../components/admin/Admin';
 // import Login from '../components/log/Login';
@@ -42,26 +46,30 @@ export const router= createBrowserRouter([
   //   path: '/admin',
   //   element: <App inner={<Admin/>}/>
   // },
-  // {
-  //   path: '/login-user',
-  //   element: <App inner={<Login as={'user'}/>}/>
-  // },
+  {
+    path: '/login-user',
+    element: <App inner={<Login/>}/>
+  },
   // {
   //   path: '/login-admin',
   //   element: <App inner={<Login as={'admin'}/>}/>
   // },
-  // {
-  //   path: '/logup-user',
-  //   element: <App inner={<Logup as={'user'}/>}/>
-  // },
+  {
+    path: '/logup-user',
+    element: <App inner={<Logup/>}/>
+  },
   // {
   //   path: '/logup-admin',
   //   element: <App inner={<Logup as={'admin'}/>}/>,
   // },
-  // {
-  //   path: '/contacto',
-  //   element: <App inner={<Contact/>}/>,
-  // },
+  {
+    path: '/contacto',
+    element: <App inner={<Contact/>}/>,
+  },
+  {
+    path: '/ayuda',
+    element: <App inner={<Help/>}/>,
+  },
   {
     path: '/ejemplares',
     element: <App inner={<All admin/>}/>,
@@ -70,10 +78,6 @@ export const router= createBrowserRouter([
     path: '/ejemplares/detail',
     element: <App inner={<Detail/>}/>,
   },
-  // {
-  //   path: '/ayuda',
-  //   element: <App inner={<HowtoBuy/>}/>,
-  // },
   // {
   //   path: '/gestion',
   //   element: <Gestion/>

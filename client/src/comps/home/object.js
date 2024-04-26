@@ -34,8 +34,21 @@ export let methods = [
         total3: 177,
         cuotas6: 34,
         total6: 204,
-        comisiones: 7,
-        text: '7%* por venta.',
+        comisiones: 8,
+        text: '8%* por venta.',
         text2: 'Hasta alcanzar AR$ 400000 de comisiones. De ahí en más, estas bajarán al  1%* para cubrir gastos (alojamiento, posicionamientoy mantenimiento)'
+    },
+    {
+        nombre: 'Zero',
+        color: 'orangered',
+        contado: 0,
+        descuento: 100,
+        cuotas3: 0,
+        total3: 0,
+        cuotas6: 0,
+        total6: 0,
+        comisiones: 15,
+        text: '15%* por venta.',
+        text2: 'Hasta alcanzar AR$ 800000 de comisiones. De ahí en más, estas bajarán al  1%* para cubrir gastos (alojamiento, posicionamiento y mantenimiento)'
     },
 ]
